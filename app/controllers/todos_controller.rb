@@ -45,7 +45,7 @@ class TodosController < ApplicationController
   end
 
   def set_request
-   $request = request
+    $request = request
   end
 
   def set_todo

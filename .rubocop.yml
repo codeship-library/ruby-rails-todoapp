@@ -23,6 +23,9 @@ Metrics/MethodLength:
 Metrics/ClassLength:
   Enabled: false
 
+Style/GlobalVars:
+  AllowedVariables: [$request]
+
 Style/Lambda:
   Enabled: false
 
