@@ -1,0 +1,12 @@
+version: '2'
+services:
+  postgres:
+    image: postgres:9.6.2-alpine
+    environment:
+      POSTGRES_USER: todoapp
+      POSTGRES_DB: todos
+  web:
+    build: ./
+    links:
+      - postgres
+    cached: true

@@ -1,0 +1,65 @@
+AllCops:
+  Exclude:
+    - config/**/*
+    - db/**/*
+    - bin/**/*
+
+Metrics/LineLength:
+  Description: 'Limit lines to 120 characters.'
+  Max: 120
+
+BlockLength:
+  Max: 85
+
+Metrics/AbcSize:
+  Enabled: false
+
+Metrics/CyclomaticComplexity:
+  Enabled: false
+
+Metrics/MethodLength:
+  Enabled: false
+
+Metrics/ClassLength:
+  Enabled: false
+
+Style/Lambda:
+  Enabled: false
+
+Style/ConditionalAssignment:
+  Enabled: false
+
+Style/StringLiterals:
+  EnforcedStyle: single_quotes
+
+Style/SpaceAroundEqualsInParameterDefault:
+  EnforcedStyle: no_space
+
+Style/AlignParameters:
+  Enabled: with_fixed_indentation
+
+Style/DotPosition:
+  EnforcedStyle: leading
+
+Style/NumericLiterals:
+  Enabled: false
+
+Style/CollectionMethods:
+  PreferredMethods:
+    collect: 'map'
+    collect!: 'map!'
+    inject: 'reduce'
+    detect: 'find'
+    find_all: 'select'
+
+Style/GuardClause:
+  Enabled: false
+
+Style/ClassAndModuleChildren:
+  Enabled: false
+
+Style/RedundantSelf:
+  Enabled: false
+
+Style/Documentation:
+  Enabled: false
