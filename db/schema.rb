@@ -16,11 +16,11 @@ ActiveRecord::Schema.define(version: 20170321180544) do
   enable_extension "plpgsql"
 
   create_table "todos", force: :cascade do |t|
-    t.string   "title"
-    t.boolean  "completed"
+    t.string   "title",       null: false
+    t.boolean  "completed",   default: false
     t.integer  "position"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
+    t.datetime "created_at",  null: false
+    t.datetime "updated_at",  null: false
   end
 
 end

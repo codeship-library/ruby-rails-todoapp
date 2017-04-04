@@ -1,4 +1,5 @@
 source 'https://rubygems.org'
+ruby '2.4.0'
 
 gem 'active_model_serializers'
 gem 'pg', '~> 0.18'

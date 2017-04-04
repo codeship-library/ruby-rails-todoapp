@@ -9,7 +9,7 @@ RSpec.describe 'Todos API', type: :request do
   # Test suite for GET /
   describe 'GET /' do
     # make HTTP get request before each example
-    before { get '/' }
+    before { get '/todos' }
 
     it 'returns todos' do
       # Note `json` is a custom helper to parse JSON responses
@@ -24,7 +24,7 @@ RSpec.describe 'Todos API', type: :request do
 
   # Test suite for GET /:id
   describe 'GET /:id' do
-    before { get "/#{todo_id}" }
+    before { get "/todos/#{todo_id}" }
 
     context 'when the record exists' do
       it 'returns the todo' do
@@ -56,7 +56,7 @@ RSpec.describe 'Todos API', type: :request do
     let(:valid_attributes) { { title: 'Learn Elm', completed: false } }
 
     context 'when the request is valid' do
-      before { post '/', params: valid_attributes }
+      before { post '/todos', params: valid_attributes }
 
       it 'creates a todo' do
         expect(json['title']).to eq('Learn Elm')
@@ -68,7 +68,7 @@ RSpec.describe 'Todos API', type: :request do
     end
 
     context 'when the request is invalid' do
-      before { post '/', params: { invalid_param: 'Foobar' } }
+      before { post '/todos', params: { invalid_param: 'Foobar' } }
 
       it 'returns status code 400' do
         expect(response).to have_http_status(400)
@@ -86,7 +86,7 @@ RSpec.describe 'Todos API', type: :request do
     let(:valid_attributes) { { title: 'Shopping', order: 2, completed: true } }
 
     context 'when the record exists' do
-      before { patch "/#{todo_id}", params: valid_attributes }
+      before { patch "/todos/#{todo_id}", params: valid_attributes }
 
       it 'updates the record' do
         expect(json).not_to be_empty
@@ -103,7 +103,7 @@ RSpec.describe 'Todos API', type: :request do
 
   # Test suite for DELETE /:id
   describe 'DELETE /:id' do
-    before { delete "/#{todo_id}" }
+    before { delete "/todos/#{todo_id}" }
 
     it 'returns status code 204' do
       expect(response).to have_http_status(204)
@@ -112,7 +112,7 @@ RSpec.describe 'Todos API', type: :request do
 
   # Test suite for DELETE /
   describe 'DELETE /' do
-    before { delete '/' }
+    before { delete '/todos' }
 
     it 'returns status code 204' do
       expect(response).to have_http_status(204)

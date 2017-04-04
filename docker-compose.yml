@@ -7,7 +7,7 @@ services:
       POSTGRES_DB: todos
   web:
     build: .
-    command: ["bundle", "exec", "rails", "s", "-b", "0.0.0.0"]
+    command: "bundle exec rails s -b 0.0.0.0"
     volumes:
       - .:/app
     ports:
