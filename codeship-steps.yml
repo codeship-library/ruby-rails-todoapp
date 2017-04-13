@@ -11,8 +11,8 @@
   - name: deploy
     tag: master
     service: deploy
-    command: codeship_heroku deploy /deploy ruby-rails-todoapp
+    command: codeship_heroku deploy /deploy ruby-todo-jim
   - name: migrate
     tag: master
     service: deploy
-    command: heroku run --app ruby-rails-todoapp -- bundle exec rake db:migrate
+    command: heroku run --app ruby-todo-jim -- bundle exec rake db:migrate
