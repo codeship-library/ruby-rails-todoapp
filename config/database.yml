@@ -1,18 +1,14 @@
 default: &default
   adapter: postgresql
+  url: <%= ENV['DATABASE_URL'] %>
   encoding: unicode
   pool: <%= ENV.fetch("RAILS_MAX_THREADS") { 5 } %>
-  username: todoapp
-  host: postgres
-  port: 5432
 
 development:
   <<: *default
-  database: todoapp_dev
 
 test:
   <<: *default
-  database: todoapp_test
 
 production:
-  url: <%= ENV['DATABASE_URL'] %>
+  <<: *default

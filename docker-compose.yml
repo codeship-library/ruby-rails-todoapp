@@ -1,16 +1,18 @@
 version: '2'
 services:
-  postgres:
-    image: postgres:9.6.2-alpine
-    environment:
-      POSTGRES_USER: todoapp
-      POSTGRES_DB: todos
   web:
     build: .
-    command: "bundle exec rails s -b 0.0.0.0"
+    command: bundle exec rails s -b 0.0.0.0
     volumes:
       - .:/app
     ports:
       - "3000:3000"
     links:
       - postgres
+    environment:
+      DATABASE_URL: postgres://todoapp@postgres/todos
+  postgres:
+    image: postgres:9.6.2-alpine
+    environment:
+      POSTGRES_USER: todoapp
+      POSTGRES_DB: todos
