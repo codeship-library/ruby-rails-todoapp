@@ -1,6 +1,6 @@
 FROM ruby:2.4.0-alpine
 
-RUN apk update && apk add nodejs build-base libxml2-dev libxslt-dev postgresql-dev
+RUN apk update && apk add nodejs build-base libxml2-dev libxslt-dev postgresql postgresql-dev
 RUN mkdir /app
 WORKDIR /app
 
