@@ -12,7 +12,6 @@ services:
     environment:
       POSTGRES_USER: todoapp
       POSTGRES_DB: todos
-    cached: true
   deploy:
     image: codeship/heroku-deployment
     encrypted_env_file: deployment.env.encrypted
