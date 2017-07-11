@@ -3,16 +3,16 @@
   - type: parallel
     steps:
     - name: rspec
-      service: web
+      service: web_codeship_example
       command: bin/ci rspec
     - name: rubocop
-      service: web
+      service: web_codeship_example
       command: rubocop
   - name: deploy
     tag: master
-    service: deploy
+    service: deploy_codeship_example
     command: codeship_heroku deploy /deploy ruby-rails-todoapp
   - name: migrate
     tag: master
-    service: deploy
+    service: deploy_codeship_example
     command: heroku run --app ruby-rails-todoapp -- bundle exec rake db:migrate
