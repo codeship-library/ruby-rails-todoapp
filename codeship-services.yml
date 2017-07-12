@@ -1,4 +1,4 @@
-web_codeship_example:
+web_codeship_example_ruby:
   build: ./
   links:
     - postgres

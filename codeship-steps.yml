@@ -3,10 +3,10 @@
   - type: parallel
     steps:
     - name: rspec
-      service: web_codeship_example
+      service: web_codeship_example_ruby
       command: bin/ci rspec
     - name: rubocop
-      service: web_codeship_example
+      service: web_codeship_example_ruby
       command: rubocop
   - name: deploy
     tag: master
