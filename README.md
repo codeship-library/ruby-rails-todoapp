@@ -179,5 +179,6 @@ To simplify the deployment to Heroku, Codeship provides a Docker image called [`
 5. Click the build to watch it happen.
 
 When complete and the build is green, you should now be able to navigate to the app with the Heroku provided url `yourappname.herokuapp.com`.
-hello
+
 If you run into trouble at any point, please submit an [issue here](https://github.com/codeship-library/ruby-rails-todoapp/issues/new).
+Testing in-git changes. 
