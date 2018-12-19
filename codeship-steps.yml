@@ -6,11 +6,3 @@
   - name: rubocop
     service: web-codeship-example-ruby
     command: rubocop
-- name: deploy
-  tag: master
-  service: codeship-heroku-deployment
-  command: codeship_heroku deploy /deploy ruby-rails-todoapp
-- name: migrate
-  tag: master
-  service: codeship-heroku-deployment
-  command: heroku run --app ruby-rails-todoapp -- bundle exec rake db:migrate
