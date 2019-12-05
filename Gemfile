@@ -3,7 +3,7 @@ ruby '2.4.0'
 
 gem 'active_model_serializers'
 gem 'pg', '~> 0.18'
-gem 'puma', '~> 3.0'
+gem 'puma', '~> 3.12'
 gem 'rack-cors'
 gem 'rails', '~> 5.0.2'
 gem 'tzinfo-data'
